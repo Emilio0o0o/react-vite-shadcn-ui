@@ -46,14 +46,14 @@ export default function UploadMultiFile({
       >
         <input {...getInputProps()} />
         <UploadIcon className='mb-3' />
-        <Box>
+        <Flex direction='column'>
           <Text as='div'>
             {isDragActive ? 'Bestand hier plaatsen' : 'Sleep bestand hiernaartoe'}
           </Text>
           <Text as='div' className={cn(buttonVariants({ variant: 'link' }))}>
             {isDragActive ? ' ' : 'of klik om te zoeken'}
           </Text>
-        </Box>
+        </Flex>
         {helperText && helperText}
       </Flex>
     </div>

@@ -30,13 +30,13 @@ export default function TopNavBar(props: any) {
     <Flex direction='row' justify='between'>
       <Flex direction='row' gap='9' justify='start'>
         <Box>
-          <Heading>Settings</Heading>
+          <Heading>Statusoverzicht</Heading>
           <Text className='text-muted-foreground'>
-            Manage your account settings and set e-mail preferences.
+            Bekijk openstaande cases en upload bestanden naar het Noodfonds.
           </Text>
         </Box>
       </Flex>
-      <Flex>
+      <Flex gap='2' align='center'>
         <Popover>
           <PopoverTrigger asChild>
             <Avatar>

@@ -1,8 +1,8 @@
-import TaskPage from './taskTable';
-import BeerPage from './beerTable';
-import AlertDemo from './AlertDemo';
-import FileDrop from './file-upload';
-import getBeers from './api-call-test';
+import TaskPage from '../components/table/tables/taskTable';
+import BeerPage from './beer-table-page';
+import AlertDemo from '../components/AlertDemo';
+import FileDrop from '../components/filedrop/file-upload';
+import getBeers from '../components/api-call-test';
 
 export const sidebarNavItems = [
   {

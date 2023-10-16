@@ -1,4 +1,4 @@
-import { DataTable } from './table/data-table';
+import { DataTable } from '../data-table';
 import { queryBeers } from '@/api/query-kit'; // Import your query functions
 import { useEffect, useState } from 'react';
 import { AxiosError } from 'axios';
@@ -7,10 +7,11 @@ import {
   textFilteredColumn,
   columnNames,
   columnOptions,
-} from './table/configs/columns-beer';
-import { beerSchemas, Beer } from './table/configs/schema';
+} from '../configs/columns-beer';
+import { beerSchemas, Beer } from '../configs/schema';
+import LoadingTable from '@/components/loading';
 
-export default function BeerPage() {
+export default function BeerTable() {
   const [beers, setBeers] = useState<Beer[] | Beer | undefined>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<AxiosError<unknown, any> | null>(null);
@@ -31,7 +32,7 @@ export default function BeerPage() {
   }, [data, queryError]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <LoadingTable />;
   }
 
   if (error) {
@@ -42,12 +43,14 @@ export default function BeerPage() {
     return null;
   }
   return (
-    <DataTable
-      data={beers}
-      columns={beerColumns}
-      textFilterColumn={textFilteredColumn}
-      selectFilterColumns={columnNames}
-      selectFilterOptions={columnOptions}
-    />
+    <>
+      <DataTable
+        data={beers}
+        columns={beerColumns}
+        textFilterColumn={textFilteredColumn}
+        selectFilterColumns={columnNames}
+        selectFilterOptions={columnOptions}
+      />
+    </>
   );
 }

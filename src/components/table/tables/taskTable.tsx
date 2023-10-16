@@ -1,12 +1,12 @@
 // import { statuses, priorities } from './table/data/data';
-import { DataTable } from './table/data-table';
+import { DataTable } from '../data-table';
 import { useEffect, useState } from 'react';
 import {
   taskColumns,
   textFilteredColumn,
   columnNames,
   columnOptions,
-} from './table/configs/columns-task';
+} from '../configs/columns-task';
 // Simulate a database read for tasks.
 export default function TaskPage() {
   const [tasks, setTasks] = useState([]); // Initial state is an empty array

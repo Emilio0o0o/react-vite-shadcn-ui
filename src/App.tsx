@@ -1,17 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from '@/components/theme-provider';
-import Layout from './components/Layout';
+import { ThemeProvider } from '@/layout/theme-provider';
+import Layout from './layout/Layout';
 import { Theme } from '@radix-ui/themes';
-import { sidebarNavItems } from './components/nav-items';
+import { sidebarNavItems } from './pages/nav-items';
 import { QueryClient, QueryClientProvider, useQuery } from '@tanstack/react-query';
 
 const queryClient = new QueryClient();
 
 export default function App() {
   return (
-    <ThemeProvider defaultTheme='light' storageKey='vite-ui-theme'>
-      <Theme>
+    <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
+      <Theme accentColor='orange'>
         <QueryClientProvider client={queryClient}>
           <Router>
             <Layout>

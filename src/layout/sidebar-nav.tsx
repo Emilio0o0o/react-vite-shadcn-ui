@@ -16,7 +16,10 @@ export default function SidebarNav({ className, items, ...props }: SidebarNavPro
 
   return (
     <nav
-      className={cn('flex space-x-2 lg:flex-col lg:space-x-0 lg:space-y-1', className)}
+      className={cn(
+        'flex space-x-2 lg:flex-col lg:space-x-0 lg:space-y-1 lg:-mx-4 overflow-auto',
+        className,
+      )}
       {...props}
     >
       {items.map((item) => (
